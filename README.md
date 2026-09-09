@@ -1,278 +1,92 @@
-# AI Data Lineage & Governance Control Plane
+# AI Data Lineage Control Plane
 
-An end-to-end data governance and release control system for LLM/AI systems. Demonstrates responsible AI practices through data ingestion, quality assurance, safety evaluation, lineage tracking, and approval gates.
+A production-minded control surface for governing AI data, evaluations, safety findings, lineage, and release approvals.
 
-**Reference implementation:** Open-source responsible AI governance
+## Dashboard preview
 
-## 🎯 Key Features
+![Lineage CP dashboard](docs/dashboard-preview.svg)
 
-### 📊 Data Ingestion
-- **Multi-source support**: Human-annotated, synthetic, licensed, public datasets
-- **Schema validation**: Automatic format and structure validation
-- **Versioning**: Track dataset versions with immutable references
-- **Metadata**: Capture provenance, licensing, and source information
+The dashboard is a responsive static application with no runtime dependency or backend requirement. It is designed as the operator surface for a larger governance platform and includes realistic release-control states and interaction patterns.
 
-### ✅ Quality & Compliance
-- **Completeness checks**: Detect missing values and incomplete records
-- **Consistency validation**: Cross-field and temporal consistency
-- **Schema enforcement**: Type checking and constraint validation
-- **Statistical quality**: Outlier detection and distribution analysis
+## What is included
 
-### 🔒 Safety & PII Detection
-- **PII detection**: Identify emails, SSNs, credit cards, phone numbers, names
-- **Sensitive content**: Detect potential harmful patterns
-- **Data masking**: Automatic redaction and anonymization
-- **Compliance reporting**: GDPR, CCPA compliance checks
+### Release control
 
-### 📈 Lineage & Audit
-- **Data lineage**: Track dataset → transformation → evaluation → model
-- **Tamper-evident logs**: Cryptographically signed audit trails
-- **Transformation tracking**: Capture all data mutations
-- **Compliance audit**: Full traceability for regulatory requirements
+- Release readiness score with trend context
+- Pipeline stages for ingest, quality, safety, approval, and release
+- Human review gate for policy exceptions
+- Approval state and blocking issue visibility
 
-### 🛡️ Approval Gates & Governance
-- **Risk assessment**: Automated safety and quality scoring
-- **Approval workflows**: Multi-level approval gates
-- **Blocking releases**: Prevent unsafe or non-compliant data from reaching production
-- **Policy enforcement**: Custom governance rules and constraints
+### Data governance
 
-### 🤖 LLM Evaluation
-- **Public models**: Open model evaluation support
-- **Benchmark tests**: MMLU, HellaSwag, TruthfulQA style evaluations
-- **Safety scoring**: Toxicity, bias, harmfulness assessment
-- **Performance metrics**: Accuracy, F1, perplexity tracking
+- Dataset inventory with stage, quality, and safety status
+- Search across dataset names, including hyphenated identifiers
+- Quality and compliance signals for operational review
+- Immutable dataset versioning concepts and provenance context
 
-### 📱 Interactive Dashboard
-- Dataset quality metrics and health status
-- Data lineage visualization
-- PII/safety detection results
-- Evaluation metrics and model performance
-- Approval status and governance actions
-- Release readiness determination
+### Safety operations
 
-## 🏗️ Architecture
+- PII and sensitive-content finding states
+- Severity and confidence details
+- Masking and exception review workflow
+- Review drawer with acknowledge and dismiss actions
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                     Data Sources                                │
-│  Human | Synthetic | Licensed | Public                         │
-└────────────────────────┬────────────────────────────────────────┘
-                         │
-┌─────────────────────────▼────────────────────────────────────────┐
-│                  Data Ingestion Layer                            │
-│  Schema Validation | Versioning | Metadata Extraction           │
-└────────────────────────┬────────────────────────────────────────┘
-                         │
-┌─────────────────────────▼────────────────────────────────────────┐
-│              Quality & Compliance Pipeline                       │
-│  Completeness | Consistency | Schema | Statistical Quality      │
-└────────────────────────┬────────────────────────────────────────┘
-                         │
-┌─────────────────────────▼────────────────────────────────────────┐
-│           Safety & PII Detection Layer                           │
-│  PII Detection | Sensitive Content | Masking | Compliance       │
-└────────────────────────┬────────────────────────────────────────┘
-                         │
-┌─────────────────────────▼────────────────────────────────────────┐
-│          Lineage Tracking & Audit Logs                           │
-│  Immutable Ledger | Tamper Detection | Compliance Reports       │
-└────────────────────────┬────────────────────────────────────────┘
-                         │
-┌─────────────────────────▼────────────────────────────────────────┐
-│         LLM Evaluation & Benchmarking                            │
-│  Gemma | Llama | Mistral | Safety Scoring | Performance         │
-└────────────────────────┬────────────────────────────────────────┘
-                         │
-┌─────────────────────────▼────────────────────────────────────────┐
-│         Approval Gates & Governance                              │
-│  Risk Assessment | Multi-Level Approvals | Release Blocking     │
-└────────────────────────┬────────────────────────────────────────┘
-                         │
-┌─────────────────────────▼────────────────────────────────────────┐
-│              Release Control Plane                               │
-│  Release Readiness | Compliance | Deployment                    │
-└─────────────────────────────────────────────────────────────────┘
-```
+### Audit and evaluation
 
-## 📁 Project Structure
+- Recent activity feed for governance events
+- Audit event health indicators
+- Model evaluation and benchmark status surfaces
+- Lineage and policy navigation entry points
 
-```
-ai-data-lineage-control-plane/
-├── README.md
-├── requirements.txt
-├── config/
-│   ├── governance_policies.yaml
-│   ├── pii_patterns.yaml
-│   └── safety_rules.yaml
-├── src/
-│   ├── __init__.py
-│   ├── ingestion/
-│   │   ├── __init__.py
-│   │   ├── data_loader.py
-│   │   ├── schema_validator.py
-│   │   └── versioning.py
-│   ├── quality/
-│   │   ├── __init__.py
-│   │   ├── completeness.py
-│   │   ├── consistency.py
-│   │   ├── schema_checks.py
-│   │   └── statistical_quality.py
-│   ├── safety/
-│   │   ├── __init__.py
-│   │   ├── pii_detector.py
-│   │   ├── sensitive_content.py
-│   │   ├── masking.py
-│   │   └── compliance_checks.py
-│   ├── lineage/
-│   │   ├── __init__.py
-│   │   ├── audit_log.py
-│   │   ├── lineage_tracker.py
-│   │   └── tamper_detection.py
-│   ├── evaluation/
-│   │   ├── __init__.py
-│   │   ├── model_evaluator.py
-│   │   ├── benchmarks.py
-│   │   └── safety_scorer.py
-│   ├── governance/
-│   │   ├── __init__.py
-│   │   ├── approval_gates.py
-│   │   ├── risk_assessment.py
-│   │   └── policy_engine.py
-│   └── dashboard/
-│       ├── __init__.py
-│       ├── app.py
-│       ├── pages/
-│       │   ├── overview.py
-│       │   ├── lineage.py
-│       │   ├── quality.py
-│       │   ├── safety.py
-│       │   ├── evaluations.py
-│       │   └── approvals.py
-│       └── components/
-│           ├── metrics.py
-│           ├── charts.py
-│           └── tables.py
-├── examples/
-│   ├── demo_data/
-│   │   ├── human_data.csv
-│   │   ├── synthetic_data.csv
-│   │   └── public_dataset.csv
-│   ├── run_pipeline.py
-│   ├── example_governance_policy.yaml
-│   └── integration_test.py
-├── tests/
-│   ├── __init__.py
-│   ├── test_ingestion.py
-│   ├── test_quality.py
-│   ├── test_safety.py
-│   ├── test_lineage.py
-│   ├── test_governance.py
-│   └── test_evaluation.py
-├── docs/
-│   ├── ARCHITECTURE.md
-│   ├── GOVERNANCE_GUIDE.md
-│   ├── SAFETY_FRAMEWORK.md
-│   ├── API_REFERENCE.md
-│   └── QUICKSTART.md
-├── Dockerfile
-├── docker-compose.yml
-└── .github/
-    └── workflows/
-        ├── tests.yml
-        └── quality_checks.yml
-```
+## Run locally
 
-## 🚀 Quick Start
+Requirements: Python 3.9+ or any static file server.
 
-### Open the control plane
-
-Open `index.html` in a browser, or serve the folder with any local static file server:
-
-```bash
+```powershell
+cd C:\Dev\ai-data-lineage-control-plane
 python -m http.server 8080
 ```
 
-Then visit `http://localhost:8080`.
+Open [http://localhost:8080](http://localhost:8080) in a browser.
 
-### Example Usage
+You can also open `index.html` directly, although a local server is recommended for deployment parity.
 
-```python
-from src.ingestion.data_loader import DataLoader
-from src.quality.completeness import CompletenessChecker
-from src.safety.pii_detector import PIIDetector
-from src.lineage.lineage_tracker import LineageTracker
-from src.governance.approval_gates import ApprovalGate
+## Project structure
 
-# Load data
-loader = DataLoader()
-dataset = loader.load_csv("data.csv", source="human_annotated")
-
-# Check quality
-quality_checker = CompletenessChecker()
-quality_report = quality_checker.check(dataset)
-
-# Detect PII
-pii_detector = PIIDetector()
-pii_findings = pii_detector.scan(dataset)
-
-# Track lineage
-tracker = LineageTracker()
-tracker.log_dataset_ingestion(dataset, source="human_annotated")
-
-# Governance approval
-approval_gate = ApprovalGate()
-approved = approval_gate.evaluate(
-    dataset=dataset,
-    quality_report=quality_report,
-    pii_findings=pii_findings,
-    policy="production_release"
-)
+```text
+.
+├── index.html                 Dashboard markup and accessible UI structure
+├── styles.css                 Responsive visual system and layout
+├── app.js                     Search, navigation, toast, and review interactions
+├── docs/
+│   └── dashboard-preview.svg  Repository-rendered dashboard preview
+├── LICENSE
+└── README.md
 ```
 
-## 📊 Dashboard Features
+## Production deployment
 
-- **Dataset Overview**: Quality metrics, row counts, schema
-- **Lineage View**: Data flow visualization with audit trail
-- **Quality Report**: Completeness, consistency, schema validation
-- **Safety Findings**: PII detections, sensitive content, masking status
-- **Model Evaluations**: Performance metrics across supported model families
-- **Approval Status**: Gate decisions, blockers, compliance status
-- **Release Readiness**: Overall readiness score and blocking issues
+The app is a static bundle and can be deployed to GitHub Pages, Cloudflare Pages, Netlify, an object-storage website, or an internal web server.
 
-## 🔐 Governance & Compliance
+Recommended deployment settings:
 
-- **Policy-driven**: YAML-based governance rules
-- **Tamper-evident**: Cryptographic signing of audit logs
-- **Approval workflows**: Customizable multi-level approvals
-- **Blocking gates**: Prevent non-compliant data from reaching production
-- **Audit trails**: Complete traceability for compliance
+- Serve `index.html` as the root document.
+- Enable HTTPS and return `index.html` for the root route.
+- Set long-lived immutable caching for `styles.css` and `app.js` after adding content-hash filenames in a build step.
+- Add a strict Content Security Policy before connecting the UI to live services.
+- Keep API tokens and governance credentials out of browser-delivered files.
+- Replace demo data with authenticated API responses before production use.
+- Add end-to-end coverage for release approval, finding acknowledgment, and policy-blocked states.
 
-## 🤖 Supported Models
+## Validation
 
-- **Open model families**: Configurable evaluation targets
-- **Hosted model endpoints**: Pluggable adapters for internal or external providers
-- **Custom evaluators**: Bring your own benchmark and safety scorer
+The current implementation has been checked with:
 
-## 📝 Documentation
+- JavaScript syntax validation using `node --check app.js`
+- Workspace diagnostics for HTML, CSS, JavaScript, and Markdown
+- Browser smoke testing of the dashboard, review drawer, and dataset search
+- Responsive layout behavior at desktop and mobile widths
 
-- [Architecture Guide](docs/ARCHITECTURE.md)
-- [Governance Framework](docs/GOVERNANCE_GUIDE.md)
-- [Safety & PII Detection](docs/SAFETY_FRAMEWORK.md)
-- [API Reference](docs/API_REFERENCE.md)
-- [Quick Start Guide](docs/QUICKSTART.md)
+## License
 
-## 📜 License
-
-Apache License 2.0 - See LICENSE file
-
-## 🤝 Contributing
-
-Contributions welcome! Please see CONTRIBUTING.md for guidelines.
-
-## 🎓 Purpose
-
-This project demonstrates responsible AI practices for data governance, lineage tracking, safety evaluation, and release control.
-
----
-
-**Built as a portfolio project demonstrating end-to-end responsible AI practices.**
+Apache License 2.0. See [LICENSE](LICENSE).

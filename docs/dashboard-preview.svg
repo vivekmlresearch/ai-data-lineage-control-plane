@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" role="img" aria-labelledby="title desc">
+  <title id="title">Lineage CP dashboard preview</title>
+  <desc id="desc">A control plane dashboard showing release readiness, data inventory, and governance activity.</desc>
+  <rect width="1400" height="820" fill="#f4f1ea"/>
+  <rect width="260" height="820" fill="#202d2a"/>
+  <g font-family="Arial, sans-serif">
+    <text x="36" y="53" fill="#efad77" font-size="28">✦</text>
+    <text x="67" y="52" fill="#f4f7f2" font-size="22" font-weight="700">lineage cp</text>
+    <rect x="193" y="35" width="34" height="22" rx="4" fill="none" stroke="#71847b"/>
+    <text x="201" y="50" fill="#aebdb5" font-size="10">CP</text>
+    <rect x="20" y="94" width="220" height="62" rx="8" fill="#273a35" stroke="#50625b"/>
+    <circle cx="42" cy="124" r="7" fill="#efaa71"/>
+    <text x="60" y="120" fill="#f1f5ef" font-size="14" font-weight="700">Atlas workspace</text>
+    <text x="60" y="140" fill="#8fa099" font-size="11">Production surface</text>
+    <text x="34" y="205" fill="#768b83" font-size="10" letter-spacing="2">CONTROL ROOM</text>
+    <rect x="20" y="224" width="220" height="44" rx="7" fill="#30403b"/>
+    <text x="40" y="252" fill="#efad77" font-size="16">◈</text><text x="68" y="252" fill="#ffffff" font-size="14">Overview</text>
+    <text x="40" y="302" fill="#91a89f" font-size="16">⌁</text><text x="68" y="302" fill="#aebdb5" font-size="14">Lineage</text>
+    <text x="40" y="352" fill="#91a89f" font-size="16">◒</text><text x="68" y="352" fill="#aebdb5" font-size="14">Quality &amp; safety</text>
+    <circle cx="222" cy="348" r="12" fill="#d47845"/><text x="218" y="352" fill="#fff" font-size="10">3</text>
+    <text x="40" y="402" fill="#91a89f" font-size="16">⌁</text><text x="68" y="402" fill="#aebdb5" font-size="14">Evaluations</text>
+    <line x1="20" y1="712" x2="240" y2="712" stroke="#3a4a45"/>
+    <circle cx="42" cy="755" r="15" fill="#d98d5b"/><text x="32" y="760" fill="#fff" font-size="11" font-weight="700">VR</text>
+    <text x="68" y="752" fill="#f1f5ef" font-size="13" font-weight="700">Vivek R</text><text x="68" y="771" fill="#8fa099" font-size="11">Platform lead</text>
+    <rect x="260" width="1140" height="72" fill="#fffefa" opacity=".72"/>
+    <line x1="260" y1="72" x2="1400" y2="72" stroke="#e5e7df"/>
+    <text x="300" y="43" fill="#74817c" font-size="13">Control room</text><text x="390" y="43" fill="#b2bbb5" font-size="13">/</text><text x="420" y="43" fill="#17211f" font-size="13" font-weight="700">Overview</text>
+    <circle cx="1212" cy="37" r="5" fill="#4ca87c"/><text x="1228" y="42" fill="#287761" font-size="12">Live monitor</text>
+    <circle cx="1350" cy="37" r="20" fill="#d98d5b"/><text x="1339" y="42" fill="#fff" font-size="12" font-weight="700">VR</text>
+    <text x="300" y="126" fill="#89938d" font-size="10" letter-spacing="2">WEDNESDAY, SEPTEMBER 09, 2026  •  09:42 UTC</text>
+    <text x="300" y="169" fill="#17211f" font-size="31" font-weight="700">Good morning, Vivek</text>
+    <text x="300" y="197" fill="#74817c" font-size="14">One release needs your attention before it can move forward.</text>
+    <rect x="1125" y="145" width="215" height="48" rx="6" fill="#287761"/><text x="1150" y="175" fill="#fff" font-size="14" font-weight="700">＋  Start release review</text>
+    <g>
+      <rect x="300" y="234" width="255" height="160" rx="8" fill="#fffefa" stroke="#e5e7df"/><text x="322" y="267" fill="#67736e" font-size="12">Release readiness</text><text x="322" y="320" fill="#17211f" font-size="38" font-weight="700">82<tspan font-size="18">%</tspan></text><rect x="322" y="343" width="205" height="6" rx="3" fill="#e9eee8"/><rect x="322" y="343" width="168" height="6" rx="3" fill="#287761"/><text x="322" y="373" fill="#3e9b72" font-size="11">↑ 4.8%</text><text x="395" y="373" fill="#98a09c" font-size="11">vs last review</text><text x="479" y="373" fill="#68766f" font-size="11">On track</text>
+      <rect x="575" y="234" width="255" height="160" rx="8" fill="#fffefa" stroke="#e5e7df"/><text x="597" y="267" fill="#67736e" font-size="12">Active datasets</text><text x="597" y="320" fill="#17211f" font-size="38" font-weight="700">24</text><path d="M597 351h23v-12h23v8h23v-15h23v11h23v-20h23v15h23v-27h23" fill="none" stroke="#3976a5" stroke-width="6"/><text x="597" y="373" fill="#3e9b72" font-size="11">↑ 3</text><text x="645" y="373" fill="#98a09c" font-size="11">this month</text><text x="770" y="373" fill="#68766f" font-size="11">+14.2%</text>
+      <rect x="850" y="234" width="255" height="160" rx="8" fill="#fffefa" stroke="#e5e7df"/><text x="872" y="267" fill="#67736e" font-size="12">Open findings</text><text x="872" y="320" fill="#17211f" font-size="38" font-weight="700">07</text><rect x="872" y="346" width="12" height="20" rx="2" fill="#d57a48"/><rect x="891" y="356" width="12" height="10" rx="2" fill="#f1cab0"/><rect x="910" y="350" width="12" height="16" rx="2" fill="#f1cab0"/><rect x="929" y="346" width="12" height="20" rx="2" fill="#d57a48"/><rect x="948" y="358" width="12" height="8" rx="2" fill="#f1cab0"/><text x="872" y="383" fill="#ce784a" font-size="11">↓ 2</text><text x="920" y="383" fill="#98a09c" font-size="11">since yesterday</text>
+      <rect x="1125" y="234" width="215" height="160" rx="8" fill="#fffefa" stroke="#e5e7df"/><text x="1147" y="267" fill="#67736e" font-size="12">Audit events</text><text x="1147" y="320" fill="#17211f" font-size="38" font-weight="700">18.4k</text><path d="M1147 351h20v10h20v-17h20v8h20v-20h20v17h20v-24h20" fill="none" stroke="#7568aa" stroke-width="6"/><text x="1147" y="383" fill="#3e9b72" font-size="11">↑ 12.6%</text><text x="1254" y="383" fill="#68766f" font-size="11">Healthy</text>
+    </g>
+    <rect x="300" y="420" width="1040" height="330" rx="8" fill="#fffefa" stroke="#e5e7df"/><text x="325" y="451" fill="#89938d" font-size="10" letter-spacing="2">DATA INVENTORY</text><text x="325" y="480" fill="#17211f" font-size="18" font-weight="700">Datasets in motion</text>
+    <text x="325" y="525" fill="#9aa39e" font-size="10" letter-spacing="1">DATASET</text><text x="710" y="525" fill="#9aa39e" font-size="10" letter-spacing="1">STAGE</text><text x="895" y="525" fill="#9aa39e" font-size="10" letter-spacing="1">QUALITY</text><text x="1030" y="525" fill="#9aa39e" font-size="10" letter-spacing="1">SAFETY SCAN</text>
+    <line x1="325" y1="542" x2="1315" y2="542" stroke="#edf0eb"/>
+    <g font-size="13"><text x="350" y="580" fill="#43524b" font-weight="700">support-conversations-v18</text><text x="350" y="600" fill="#9aa39e" font-size="11">Customer support · 2.8M rows</text><rect x="710" y="561" width="96" height="25" rx="4" fill="#e5f1f7"/><text x="724" y="578" fill="#3976a5" font-size="11">● Processing</text><text x="895" y="578" fill="#3f6f5e" font-weight="700">96.4%</text><rect x="1030" y="561" width="62" height="25" rx="4" fill="#e2f1e9"/><text x="1042" y="578" fill="#287761" font-size="11">Passed</text>
+    <line x1="325" y1="620" x2="1315" y2="620" stroke="#edf0eb"/><text x="350" y="659" fill="#43524b" font-weight="700">red-team-adversarial-slice</text><text x="350" y="679" fill="#9aa39e" font-size="11">Safety evaluation · 14.2K rows</text><rect x="710" y="640" width="105" height="25" rx="4" fill="#fbe8d8"/><text x="724" y="657" fill="#a85c32" font-size="11">● Needs review</text><text x="895" y="657" fill="#3f6f5e" font-weight="700">88.1%</text><rect x="1030" y="640" width="85" height="25" rx="4" fill="#fbe8d8"/><text x="1042" y="657" fill="#b96639" font-size="11">2 findings</text>
+    </g>
+  </g>
+</svg>
