@@ -48,6 +48,15 @@ The dashboard is a responsive static application with no runtime dependency or b
 - Risk register with impact, owner, and due date
 - Safety remediation health and measurable outcome metrics
 
+### Operational workspaces
+
+- Lineage: artifact dependency chains and integrity checks
+- Quality and safety: remediation queue, severity, and policy coverage
+- Evaluations: benchmark runs, regression coverage, and gaps
+- Approvals: decision queue, exceptions, and separation-of-duties controls
+- Audit log: signed event stream and evidence export
+- Policies: active controls, owners, and review windows
+
 ## Run locally
 
 Requirements: Python 3.9+ or any static file server.
