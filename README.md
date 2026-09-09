@@ -48,6 +48,14 @@ The dashboard is a responsive static application with no runtime dependency or b
 - Risk register with impact, owner, and due date
 - Safety remediation health and measurable outcome metrics
 
+### Critical path workbench
+
+- Integrated launch timeline with phase owners, milestones, and schedule health
+- Dependency chain showing which artifacts and approvals can move the launch date
+- Blocker register connected to safety findings and existing review workflows
+- Leadership decision queue with due dates and escalation context
+- What-if schedule simulation for slip impact, projected launch date, and confidence
+
 ### Operational workspaces
 
 - Lineage: artifact dependency chains and integrity checks

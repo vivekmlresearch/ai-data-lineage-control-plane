@@ -88,9 +88,11 @@ document.querySelectorAll('.nav-item').forEach((item) => {
     item.classList.add('active');
     document.getElementById('breadcrumb-view').textContent = item.dataset.view;
     const isLaunchView = item.dataset.view === 'Launch readiness';
+    const isCriticalView = item.dataset.view === 'Critical path';
     const isOperationalView = Boolean(operationalViews[item.dataset.view]);
-    document.getElementById('dashboard-view').hidden = isLaunchView || isOperationalView;
+    document.getElementById('dashboard-view').hidden = isLaunchView || isCriticalView || isOperationalView;
     document.getElementById('launch-view').hidden = !isLaunchView;
+    document.getElementById('critical-view').hidden = !isCriticalView;
     document.getElementById('operational-view').hidden = !isOperationalView;
     if (isOperationalView) renderOperationalView(item.dataset.view);
   });
@@ -100,6 +102,20 @@ renderOperationalView('Lineage');
 document.getElementById('operational-action').addEventListener('click', () => showToast('Work item created in the control room'));
 
 document.getElementById('launch-brief').addEventListener('click', () => showToast('Launch brief prepared for stakeholder review'));
+document.getElementById('critical-export').addEventListener('click', () => showToast('Critical path brief exported for leadership review'));
+document.getElementById('critical-sync').addEventListener('click', () => showToast('Program data synchronized • last sync just now'));
+document.getElementById('dependency-filter').addEventListener('click', () => showToast('Showing dependencies that affect launch date'));
+document.getElementById('dependency-review').addEventListener('click', openDrawer);
+document.getElementById('decision-safety').addEventListener('click', openDrawer);
+document.getElementById('create-escalation').addEventListener('click', () => showToast('Escalation created for Responsible AI and Product leadership'));
+document.getElementById('slip-days').addEventListener('input', (event) => {
+  const days = Number(event.target.value);
+  document.getElementById('slip-output').textContent = `${days} day${days === 1 ? '' : 's'}`;
+  document.getElementById('projected-launch').textContent = `September ${18 + days}`;
+  document.getElementById('projected-impact').textContent = days === 0 ? 'No schedule impact' : `${days} day${days === 1 ? '' : 's'} of buffer consumed · escalation ${days >= 2 ? 'recommended' : 'not yet required'}`;
+  document.getElementById('confidence-score').innerHTML = `${Math.max(58, 74 - (days * 4))}<span>%</span>`;
+  document.getElementById('confidence-meter').style.width = `${Math.max(58, 74 - (days * 4))}%`;
+});
 document.getElementById('workstream-filter').addEventListener('click', () => showToast('Workstream filter: all owners'));
 document.getElementById('gate-review').addEventListener('click', openDrawer);
 document.getElementById('safety-report').addEventListener('click', () => showToast('Safety report opened for REL-0284'));
