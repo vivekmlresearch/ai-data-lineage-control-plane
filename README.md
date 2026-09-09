@@ -6,6 +6,8 @@ A production-ready control surface for governing AI data, evaluations, safety fi
 
 ![Lineage CP dashboard](docs/dashboard-preview.svg)
 
+**[Open the interactive Lineage CP dashboard](https://vivekmlresearch.github.io/ai-data-lineage-control-plane/)**
+
 The dashboard is a responsive static application with no runtime dependency or backend requirement. It is designed as the operator surface for a larger governance platform and includes realistic release-control states and interaction patterns.
 
 ## What is included
