@@ -31,9 +31,17 @@ document.querySelectorAll('.nav-item').forEach((item) => {
     document.querySelector('.nav-item.active').classList.remove('active');
     item.classList.add('active');
     document.getElementById('breadcrumb-view').textContent = item.dataset.view;
-    if (item.dataset.view !== 'Overview') showToast(`${item.dataset.view} view is ready for review`);
+    const isLaunchView = item.dataset.view === 'Launch readiness';
+    document.getElementById('dashboard-view').hidden = isLaunchView;
+    document.getElementById('launch-view').hidden = !isLaunchView;
+    if (item.dataset.view !== 'Overview' && !isLaunchView) showToast(`${item.dataset.view} view is ready for review`);
   });
 });
+
+document.getElementById('launch-brief').addEventListener('click', () => showToast('Launch brief prepared for stakeholder review'));
+document.getElementById('workstream-filter').addEventListener('click', () => showToast('Workstream filter: all owners'));
+document.getElementById('gate-review').addEventListener('click', openDrawer);
+document.getElementById('safety-report').addEventListener('click', () => showToast('Safety report opened for REL-0284'));
 
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') closeDrawer();

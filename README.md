@@ -1,6 +1,6 @@
 # AI Data Lineage Control Plane
 
-A production-minded control surface for governing AI data, evaluations, safety findings, lineage, and release approvals.
+A production-ready control surface for governing AI data, evaluations, safety findings, lineage, and release approvals.
 
 ## Dashboard preview
 
@@ -38,12 +38,20 @@ The dashboard is a responsive static application with no runtime dependency or b
 - Model evaluation and benchmark status surfaces
 - Lineage and policy navigation entry points
 
+### Program execution and launch readiness
+
+- Cross-functional workstreams with owners, milestones, and progress
+- Composite launch readiness score with target launch date
+- Approval gates connected to blocking risks and safety findings
+- Risk register with impact, owner, and due date
+- Safety remediation health and measurable outcome metrics
+
 ## Run locally
 
 Requirements: Python 3.9+ or any static file server.
 
 ```powershell
-cd C:\Dev\ai-data-lineage-control-plane
+cd ai-data-lineage-control-plane
 python -m http.server 8080
 ```
 
@@ -60,6 +68,9 @@ You can also open `index.html` directly, although a local server is recommended 
 ├── app.js                     Search, navigation, toast, and review interactions
 ├── docs/
 │   └── dashboard-preview.svg  Repository-rendered dashboard preview
+├── .github/
+│   └── workflows/
+│       └── pages.yml          GitHub Pages deployment workflow
 ├── LICENSE
 └── README.md
 ```
@@ -67,6 +78,10 @@ You can also open `index.html` directly, although a local server is recommended 
 ## Production deployment
 
 The app is a static bundle and can be deployed to GitHub Pages, Cloudflare Pages, Netlify, an object-storage website, or an internal web server.
+
+### GitHub Pages
+
+This repository includes a GitHub Actions workflow at `.github/workflows/pages.yml`. Enable **Pages** in the repository settings with **GitHub Actions** as the build source. Every push to `main` will then publish the app at the repository's Pages URL.
 
 Recommended deployment settings:
 
