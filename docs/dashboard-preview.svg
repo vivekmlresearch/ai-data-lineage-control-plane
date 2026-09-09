@@ -21,7 +21,7 @@
     <text x="40" y="402" fill="#91a89f" font-size="16">⌁</text><text x="68" y="402" fill="#aebdb5" font-size="14">Evaluations</text>
     <line x1="20" y1="712" x2="240" y2="712" stroke="#3a4a45"/>
     <circle cx="42" cy="755" r="15" fill="#d98d5b"/><text x="32" y="760" fill="#fff" font-size="11" font-weight="700">VR</text>
-    <text x="68" y="752" fill="#f1f5ef" font-size="13" font-weight="700">Vivek R</text><text x="68" y="771" fill="#8fa099" font-size="11">Platform lead</text>
+    <text x="68" y="752" fill="#f1f5ef" font-size="13" font-weight="700">Vivek R</text><text x="68" y="771" fill="#8fa099" font-size="11">Senior Program Lead</text>
     <rect x="260" width="1140" height="72" fill="#fffefa" opacity=".72"/>
     <line x1="260" y1="72" x2="1400" y2="72" stroke="#e5e7df"/>
     <text x="300" y="43" fill="#74817c" font-size="13">Control room</text><text x="390" y="43" fill="#b2bbb5" font-size="13">/</text><text x="420" y="43" fill="#17211f" font-size="13" font-weight="700">Overview</text>
