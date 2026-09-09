@@ -2,7 +2,7 @@
 
 An end-to-end data governance and release control system for LLM/AI systems. Demonstrates responsible AI practices through data ingestion, quality assurance, safety evaluation, lineage tracking, and approval gates.
 
-**Inspired by:** Google's LLM Launch & Data Governance Framework | **Reference Implementation:** Open-source responsible AI
+**Reference implementation:** Open-source responsible AI governance
 
 ## 🎯 Key Features
 
@@ -37,7 +37,7 @@ An end-to-end data governance and release control system for LLM/AI systems. Dem
 - **Policy enforcement**: Custom governance rules and constraints
 
 ### 🤖 LLM Evaluation
-- **Public models**: Gemma, Llama, Mistral evaluation support
+- **Public models**: Open model evaluation support
 - **Benchmark tests**: MMLU, HellaSwag, TruthfulQA style evaluations
 - **Safety scoring**: Toxicity, bias, harmfulness assessment
 - **Performance metrics**: Accuracy, F1, perplexity tracking
@@ -184,19 +184,15 @@ ai-data-lineage-control-plane/
 
 ## 🚀 Quick Start
 
-### Installation
+### Open the control plane
+
+Open `index.html` in a browser, or serve the folder with any local static file server:
 
 ```bash
-# Clone the repository
-git clone https://github.com/vivekmlresearch/ai-data-lineage-control-plane.git
-cd ai-data-lineage-control-plane
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run the dashboard
-python -m src.dashboard.app
+python -m http.server 8080
 ```
+
+Then visit `http://localhost:8080`.
 
 ### Example Usage
 
@@ -239,7 +235,7 @@ approved = approval_gate.evaluate(
 - **Lineage View**: Data flow visualization with audit trail
 - **Quality Report**: Completeness, consistency, schema validation
 - **Safety Findings**: PII detections, sensitive content, masking status
-- **Model Evaluations**: Performance metrics on Gemma/Llama/Mistral
+- **Model Evaluations**: Performance metrics across supported model families
 - **Approval Status**: Gate decisions, blockers, compliance status
 - **Release Readiness**: Overall readiness score and blocking issues
 
@@ -253,9 +249,9 @@ approved = approval_gate.evaluate(
 
 ## 🤖 Supported Models
 
-- **Gemma**: Google's lightweight model
-- **Llama**: Meta's open LLM family
-- **Mistral**: Efficient open models
+- **Open model families**: Configurable evaluation targets
+- **Hosted model endpoints**: Pluggable adapters for internal or external providers
+- **Custom evaluators**: Bring your own benchmark and safety scorer
 
 ## 📝 Documentation
 
@@ -273,9 +269,9 @@ Apache License 2.0 - See LICENSE file
 
 Contributions welcome! Please see CONTRIBUTING.md for guidelines.
 
-## 🎓 Inspiration
+## 🎓 Purpose
 
-This project is inspired by Google's LLM Launch Framework and demonstrates responsible AI practices for data governance, lineage tracking, safety evaluation, and release control.
+This project demonstrates responsible AI practices for data governance, lineage tracking, safety evaluation, and release control.
 
 ---
 

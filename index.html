@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f1ea">
+  <title>Lineage CP</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">✦</span><span>lineage cp</span><span class="brand-badge">CP</span></div>
+      <div class="workspace-switcher"><span class="workspace-dot"></span><span><strong>Atlas workspace</strong><small>Production surface</small></span><span class="chevron">⌄</span></div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <p class="nav-label">Control room</p>
+        <button class="nav-item active" data-view="Overview"><span>◈</span>Overview</button>
+        <button class="nav-item" data-view="Lineage"><span>⌁</span>Lineage</button>
+        <button class="nav-item" data-view="Quality"><span>◒</span>Quality & safety<span class="nav-count">3</span></button>
+        <button class="nav-item" data-view="Evaluations"><span>⌁</span>Evaluations</button>
+        <button class="nav-item" data-view="Approvals"><span>◎</span>Approvals<span class="nav-count orange">2</span></button>
+        <p class="nav-label second">System</p>
+        <button class="nav-item" data-view="Audit log"><span>▤</span>Audit log</button>
+        <button class="nav-item" data-view="Policies"><span>⌬</span>Policies</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="system-status"><span class="status-pulse"></span><span><strong>All systems nominal</strong><small>Last sync 34s ago</small></span></div>
+        <button class="user-menu"><span class="avatar">VR</span><span><strong>Vivek R</strong><small>Platform lead</small></span><span class="chevron">⌄</span></button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="breadcrumbs"><span>Control room</span><b>/</b><strong id="breadcrumb-view">Overview</strong></div>
+        <div class="top-actions"><span class="live-indicator"><i></i>Live monitor</span><button class="icon-button" aria-label="Notifications">♧<b class="notification-dot"></b></button><button class="avatar small">VR</button></div>
+      </header>
+
+      <section class="page-wrap" id="dashboard-view">
+        <div class="page-heading"><div><p class="eyebrow">Wednesday, September 09, 2026 <span>•</span> 09:42 UTC</p><h1>Good morning, Vivek</h1><p class="heading-sub">One release needs your attention before it can move forward.</p></div><button class="primary-button" id="new-release"><span>＋</span> Start release review</button></div>
+
+        <div class="metric-grid">
+          <article class="metric-card readiness"><div class="metric-top"><span>Release readiness</span><span class="metric-icon">↗</span></div><div class="metric-value">82<span>%</span></div><div class="meter"><i style="width:82%"></i></div><div class="metric-foot"><span class="positive">↑ 4.8%</span><span>vs last review</span><strong>On track</strong></div></article>
+          <article class="metric-card"><div class="metric-top"><span>Active datasets</span><span class="metric-icon blue">◉</span></div><div class="metric-value">24</div><div class="sparkline blue-spark"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="metric-foot"><span class="positive">↑ 3</span><span>this month</span><strong>+14.2%</strong></div></article>
+          <article class="metric-card"><div class="metric-top"><span>Open findings</span><span class="metric-icon amber">!</span></div><div class="metric-value">07</div><div class="finding-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="metric-foot"><span class="negative">↓ 2</span><span>since yesterday</span><strong>2 critical</strong></div></article>
+          <article class="metric-card"><div class="metric-top"><span>Audit events</span><span class="metric-icon violet">⌁</span></div><div class="metric-value">18.4k</div><div class="sparkline violet-spark"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="metric-foot"><span class="positive">↑ 12.6%</span><span>last 30 days</span><strong>Healthy</strong></div></article>
+        </div>
+
+        <div class="section-grid">
+          <section class="panel pipeline-panel"><div class="panel-heading"><div><p class="eyebrow">Active release</p><h2>Customer support copilot <span class="status-pill review">In review</span></h2></div><button class="more-button" aria-label="More options">•••</button></div><div class="release-meta"><span><b>REL-0284</b> · v2.4.0</span><span>Owner <b>Applied AI</b></span><span>Updated 12 min ago</span></div><div class="pipeline"><div class="pipeline-line"><i class="complete"></i><i class="complete"></i><i class="complete"></i><i class="current"></i><i></i></div><div class="pipeline-step complete-step"><span class="step-icon">✓</span><strong>Ingest</strong><small>3 sources</small></div><div class="pipeline-step complete-step"><span class="step-icon">✓</span><strong>Quality</strong><small>96.4% score</small></div><div class="pipeline-step complete-step"><span class="step-icon">✓</span><strong>Safety</strong><small>2 findings</small></div><div class="pipeline-step current-step"><span class="step-icon">◐</span><strong>Approval</strong><small>1 pending</small></div><div class="pipeline-step"><span class="step-icon">→</span><strong>Release</strong><small>Awaiting gate</small></div></div><div class="gate-alert"><span class="alert-symbol">!</span><div><strong>Human review required</strong><p>Safety threshold exceeded for the red-team slice. A policy owner must acknowledge the exception.</p></div><button class="text-button" id="open-review">Review finding <span>→</span></button></div></section>
+          <section class="panel activity-panel"><div class="panel-heading"><div><p class="eyebrow">System pulse</p><h2>Recent activity</h2></div><button class="text-button">View audit log <span>→</span></button></div><div class="activity-list"><div class="activity-item"><span class="activity-icon green">✓</span><div><strong>Quality gate passed</strong><p>support-conversations-v18 cleared schema checks</p><small>8 min ago · <b>Quality bot</b></small></div></div><div class="activity-item"><span class="activity-icon amber">!</span><div><strong>New safety finding</strong><p>Potential indirect PII in evaluation sample</p><small>12 min ago · <b>Safety scanner</b></small></div></div><div class="activity-item"><span class="activity-icon blue">⌁</span><div><strong>Dataset versioned</strong><p>support-conversations-v18 is now immutable</p><small>26 min ago · <b>Vivek R</b></small></div></div><div class="activity-item"><span class="activity-icon violet">↗</span><div><strong>Evaluation completed</strong><p>Regression suite scored 94.1% overall</p><small>41 min ago · <b>Eval runner</b></small></div></div></div></section>
+        </div>
+
+        <section class="panel datasets-panel"><div class="panel-heading"><div><p class="eyebrow">Data inventory</p><h2>Datasets in motion</h2></div><div class="panel-actions"><div class="search-box"><span>⌕</span><input id="dataset-search" placeholder="Search datasets" aria-label="Search datasets"></div><button class="filter-button" id="filter-button">☷ <span>Filter</span><b>2</b></button><button class="icon-button bordered" aria-label="Download">↓</button></div></div><div class="table-wrap"><table><thead><tr><th>Dataset</th><th>Stage</th><th>Quality</th><th>Safety scan</th><th>Last updated</th><th></th></tr></thead><tbody id="dataset-rows"><tr data-search="support conversations v18"><td><div class="dataset-name"><span class="file-icon blue-bg">▤</span><span><strong>support-conversations-v18</strong><small>Customer support · 2.8M rows</small></span></div></td><td><span class="tag processing"><i></i>Processing</span></td><td><span class="quality-score">96.4%</span></td><td><span class="tag passed">Passed</span></td><td>12 min ago</td><td><button class="row-menu">•••</button></td></tr><tr data-search="red team adversarial slice"><td><div class="dataset-name"><span class="file-icon red-bg">▤</span><span><strong>red-team-adversarial-slice</strong><small>Safety evaluation · 14.2K rows</small></span></div></td><td><span class="tag review"><i></i>Needs review</span></td><td><span class="quality-score">88.1%</span></td><td><span class="tag warning">2 findings</span></td><td>12 min ago</td><td><button class="row-menu">•••</button></td></tr><tr data-search="agent knowledge base"><td><div class="dataset-name"><span class="file-icon green-bg">▤</span><span><strong>agent-knowledge-base-v6</strong><small>Retrieval corpus · 842K rows</small></span></div></td><td><span class="tag ready"><i></i>Ready</span></td><td><span class="quality-score">99.2%</span></td><td><span class="tag passed">Passed</span></td><td>Yesterday</td><td><button class="row-menu">•••</button></td></tr></tbody></table></div><div class="table-footer"><span>Showing 3 of 24 datasets</span><button class="text-button">View all datasets <span>→</span></button></div></section>
+      </section>
+      <div class="toast" id="toast"><span>✓</span><span id="toast-text">Review created</span></div>
+    </main>
+  </div>
+  <div class="drawer-backdrop" id="drawer-backdrop"></div><aside class="review-drawer" id="review-drawer"><div class="drawer-header"><div><p class="eyebrow">Finding SAF-142</p><h2>Indirect PII detected</h2></div><button class="close-button" id="close-drawer">×</button></div><div class="drawer-content"><span class="tag warning">High severity</span><p class="drawer-lead">The safety scanner found a possible customer identifier in the red-team evaluation slice.</p><div class="finding-detail"><span>Detection type</span><strong>Indirect personal information</strong></div><div class="finding-detail"><span>Confidence</span><strong>91.8%</strong></div><div class="finding-detail"><span>Policy impact</span><strong class="orange-text">Blocks production release</strong></div><div class="code-sample"><div><span>Sample record</span><span>Row 8,421</span></div><code>"ticket_context": "Customer with acct_••••4821"</code></div><div class="drawer-note"><span>◎</span><p>Confirm the masking transform or request an exception from the policy owner.</p></div></div><div class="drawer-footer"><button class="secondary-button" id="dismiss-finding">Dismiss finding</button><button class="primary-button" id="acknowledge">Acknowledge & continue</button></div></aside>
+  <script src="app.js"></script>
+</body>
+</html>
